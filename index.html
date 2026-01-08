@@ -1114,9 +1114,10 @@
 
 
       </div>
-
-     <div class="cta-row">
-  <button class="btn primary" id="btnCall">Llamar</button>
+<div class="cta-row">
+  <a href="tel:3343340062" class="btn primary">
+    Llamar
+  </a>
 
   <a href="./dinah-gomez.vcf"
      class="btn ghost"
@@ -1468,134 +1469,135 @@
   </div>
 
   <script>
-    /* =========================
-       1) DATOS (TU CV)
-       ========================= */
-    const DATA = {
-      fullName: "DINAH IRASEMA GOMEZ MONTOYA",
-      role: "Asesor Financiero y Comercial • Programador en React, JS, CSS, HTML",
-      phone: "3343340062",
-      email: "dinahgomez19@gmail.com",
-      address: "Calle Matanzas 89/6, Lindavista Norte, G.A.M., C.P. 04300, CDMX",
-      website: "https://tusitio.com", // EDITA: URL donde publicarás la tarjeta
-      whatsappMessage: "Hola, me gustaría más información."
-    };
-
-    // pintar header/footer
-    // pintar header/footer (SIN ERRORES)
-document.getElementById("hName").textContent = DATA.fullName;
-
-document.getElementById("hRole1").textContent = "Asesor Financiero y Comercial";
-document.getElementById("hRole2").textContent = "Programador en React, JS, CSS, HTML";
-
-document.getElementById("hPhone").textContent = DATA.phone;
-document.getElementById("hMail").textContent = DATA.email;
-
-document.getElementById("fName").textContent = DATA.fullName;
-document.getElementById("fRole").textContent = "Asesor Financiero y Comercial • Frontend";
-
-document.getElementById("qrMain").src =
-  `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(DATA.website)}`;
-
-    // links rápidos
-    const wa = document.getElementById("waLink");
-    const mail = document.getElementById("mailLink");
-    wa.href = `https://wa.me/52${DATA.phone.replace(/[^\d]/g,'')}?text=${encodeURIComponent(DATA.whatsappMessage)}`;
-    mail.href = `mailto:${DATA.email}`;
-
-    document.getElementById("btnCall").addEventListener("click", ()=>{
-      window.location.href = `tel:+52${DATA.phone.replace(/[^\d]/g,'')}`;
-    });
-
-    /* =============================
-       CONECTORES (canvas) - FUERTES
-       ============================= */
-    (function(){
-      const canvas = document.getElementById('net');
-      const ctx = canvas.getContext('2d', { alpha:true });
-
-      let w=0,h=0,dpr=1;
-      let pts=[];
-const cfg = {
-  density: 14000,   // más alto = menos puntos (menos “nido”)
-  minPts: 42,
-  maxPts: 70,
-
-  linkDist: 220,    // distancia para que sí haya líneas
-  maxLinks: 3,      // ✅ CLAVE: máximo de conexiones por punto
-
-  drift: 0.08,
-  lineW: 1.0,
-  dotR: 1.4,
-  baseAlpha: 0.22   // ✅ tenue (antes 0.58 era telaraña)
-  
+   /* =========================
+   1) DATOS (TU CV)
+   ========================= */
+const DATA = {
+  fullName: "DINAH IRASEMA GOMEZ MONTOYA",
+  role: "Asesor Financiero y Comercial • Programador en React, JS, CSS, HTML",
+  phone: "3343340062",
+  email: "dinahgomez19@gmail.com",
+  address: "Calle Matanzas 89/6, Lindavista Norte, G.A.M., C.P. 04300, CDMX",
+  website: "https://tusitio.com",
+  whatsappMessage: "Hola, me gustaría más información."
 };
 
+/* =========================
+   HEADER / FOOTER
+   ========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const hName = document.getElementById("hName");
+  if (!hName) return;
 
-      function resize(){
-        const r = canvas.getBoundingClientRect();
-        dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-        w = Math.floor(r.width);
-        h = Math.floor(r.height);
-        canvas.width = Math.floor(w*dpr);
-        canvas.height = Math.floor(h*dpr);
-        canvas.style.width = w+'px';
-        canvas.style.height = h+'px';
-        ctx.setTransform(dpr,0,0,dpr,0,0);
+  hName.textContent = DATA.fullName;
+  document.getElementById("hRole1").textContent = "Asesor Financiero y Comercial";
+  document.getElementById("hRole2").textContent = "Programador en React, JS, CSS, HTML";
+  document.getElementById("hPhone").textContent = DATA.phone;
+  document.getElementById("hMail").textContent = DATA.email;
 
-        const target = Math.max(cfg.minPts, Math.min(cfg.maxPts, Math.round((w*h)/cfg.density)));
-        pts = new Array(target).fill(0).map(()=>({
-          x: Math.random()*w,
-          y: Math.random()*h,
-          vx:(Math.random()*2-1)*cfg.drift,
-          vy:(Math.random()*2-1)*cfg.drift
-        }));
-      }
+  document.getElementById("fName").textContent = DATA.fullName;
+  document.getElementById("fRole").textContent = "Asesor Financiero y Comercial • Frontend";
 
-      function draw(){
-        ctx.clearRect(0,0,w,h);
-        ctx.lineWidth = cfg.lineW;
-        ctx.fillStyle = "rgba(255,255,255,0.90)";
+  document.getElementById("qrMain").src =
+    `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(DATA.website)}`;
 
-        for(const p of pts){
-          p.x += p.vx;
-          p.y += p.vy;
-          if(p.x<0||p.x>w) p.vx *= -1;
-          if(p.y<0||p.y>h) p.vy *= -1;
-        }
+  const wa = document.getElementById("waLink");
+  const mail = document.getElementById("mailLink");
 
-        for(let i=0;i<pts.length;i++){
-          const a=pts[i];
+  wa.href = `https://wa.me/52${DATA.phone.replace(/[^\d]/g,'')}?text=${encodeURIComponent(DATA.whatsappMessage)}`;
+  mail.href = `mailto:${DATA.email}`;
+
+  document.getElementById("btnCall").addEventListener("click", () => {
+    window.location.href = `tel:+52${DATA.phone.replace(/[^\d]/g,'')}`;
+  });
+});
+
+/* =============================
+   CONECTORES (canvas)
+   ============================= */
+(function(){
+  const canvas = document.getElementById('net');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d', { alpha:true });
+
+  let w=0,h=0,dpr=1;
+  let pts=[];
+
+  const cfg = {
+    density: 14000,
+    minPts: 42,
+    maxPts: 70,
+    linkDist: 220,
+    maxLinks: 3,
+    linkChance: 0.35,   // ✅ ERROR REAL ARREGLADO
+    drift: 0.08,
+    lineW: 1.0,
+    dotR: 1.4,
+    baseAlpha: 0.22
+  };
+
+  function resize(){
+    const r = canvas.getBoundingClientRect();
+    dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    w = Math.floor(r.width);
+    h = Math.floor(r.height);
+    canvas.width = Math.floor(w*dpr);
+    canvas.height = Math.floor(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+
+    const target = Math.max(cfg.minPts,
+      Math.min(cfg.maxPts, Math.round((w*h)/cfg.density)));
+
+    pts = new Array(target).fill(0).map(() => ({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      vx:(Math.random()*2-1)*cfg.drift,
+      vy:(Math.random()*2-1)*cfg.drift
+    }));
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    ctx.lineWidth = cfg.lineW;
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
+
+    for(const p of pts){
+      p.x += p.vx;
+      p.y += p.vy;
+      if(p.x<0||p.x>w) p.vx*=-1;
+      if(p.y<0||p.y>h) p.vy*=-1;
+    }
+
+    for(let i=0;i<pts.length;i++){
+      const a=pts[i];
+      ctx.beginPath();
+      ctx.arc(a.x,a.y,cfg.dotR,0,Math.PI*2);
+      ctx.fill();
+
+      let links = 0;
+
+      for(let j=i+1;j<pts.length && links<cfg.maxLinks;j++){
+        const b=pts[j];
+        const dist = Math.hypot(a.x-b.x, a.y-b.y);
+        if(dist < cfg.linkDist && Math.random() < cfg.linkChance){
+          links++;
+          const alpha = (1 - dist / cfg.linkDist) * cfg.baseAlpha;
+          ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
           ctx.beginPath();
-          ctx.arc(a.x,a.y,cfg.dotR,0,Math.PI*2);
-          ctx.fill();
-
-          for(let j=i+1;j<pts.length;j++){
-            const b=pts[j];
-            const dx=a.x-b.x, dy=a.y-b.y;
-            const dist = Math.hypot(dx,dy);
-           if (dist < cfg.linkDist) {
-  // recorta líneas para que NO se vea telaraña
-  if (Math.random() > cfg.linkChance) continue;
-
-  const alpha = (1 - dist / cfg.linkDist) * cfg.baseAlpha;
-
-  ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
-  ctx.beginPath();
-  ctx.moveTo(a.x, a.y);
-  ctx.lineTo(b.x, b.y);
-  ctx.stroke();
-}
-
-          }
+          ctx.moveTo(a.x,a.y);
+          ctx.lineTo(b.x,b.y);
+          ctx.stroke();
         }
-        requestAnimationFrame(draw);
       }
+    }
+    requestAnimationFrame(draw);
+  }
 
-      window.addEventListener('resize', resize, { passive:true });
-      resize();
-      draw();
-    })();
+  window.addEventListener('resize', resize, { passive:true });
+  resize();
+  draw();
+})();
 
     /* =========================
        3) RUEDA (SVG)
