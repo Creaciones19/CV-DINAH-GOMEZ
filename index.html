@@ -1,0 +1,1723 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV | Tarjeta Digital - Dinah Irasema Gómez Montoya</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <!-- Lottie (opcional) -->
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+
+  <style>
+    :root{
+      /* ===== PALETA AZUL (como tu ejemplo) ===== */
+      --azul1:#0b5f94;
+      --azul2:#083a63;
+      --azul3:#062744;
+
+      --txt:#0f2233;
+      --muted:#6b7c8a;
+
+      --bg:#f3f6f9;
+      --card:#ffffff;
+
+      --radius:28px;
+      --shadow: 0 18px 50px rgba(0,0,0,.10);
+
+      --max:1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:var(--txt);
+      background: var(--bg);
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* ===== LAYOUT BASE ===== */
+    .wrap{ width:min(var(--max), 92%); margin:0 auto; }
+
+    .section{
+      padding: 54px 0;
+      background:#fff;
+    }
+    .section.alt{
+      background: linear-gradient(180deg, #021b33, #052a4d);
+      color:#fff;
+    }
+    .title{
+      margin:0 0 18px;
+      font-size: clamp(24px, 3vw, 44px);
+      font-weight: 800;
+      text-align:center;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      text-align:center;
+      margin: -8px 0 26px;
+      color: rgba(255,255,255,.78);
+      font-weight: 300;
+    }
+
+    /* ===== TOP PHOTO STRIP (como el rojo/vino: foto arriba) ===== */
+    .hero-wrap{ position:relative; padding-top: 18px; }
+    .top-photo{
+      height: 170px;
+      border-top: 6px solid rgba(255,255,255,.35);
+      border-radius: 34px 34px 0 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,.10)),
+        url("header.jpg") center/cover no-repeat; /* EDITA: tu imagen */
+      width:min(var(--max), 92%);
+      margin:0 auto;
+    }
+
+    /* ===== HEADER AZUL con conectores blancos ===== */
+    header.header{
+      position:relative;
+      width:min(var(--max), 92%);
+      margin:0 auto;
+      border-radius: 0 0 34px 34px;
+      overflow:  visible;
+      background:
+        radial-gradient(1100px 320px at 70% 50%, rgba(255,255,255,.12), transparent 60%),
+        linear-gradient(90deg, var(--azul3) 0%, var(--azul2) 45%, var(--azul1) 100%);
+      box-shadow: var(--shadow);
+      padding: 64px 0 34px;
+    }
+
+    .net-canvas{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      opacity:.95;
+      pointer-events:none;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,.10));
+    }
+
+    .header-inner{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap: 10px;
+      padding: 0 18px;
+    }
+
+    /* avatar colgado */
+    .avatar{
+      position:absolute;
+      left:50%;
+      top:-48px;
+      transform:translateX(-50%);
+      width:96px;
+      height:96px;
+      border-radius:50%;
+      background:#fff;
+      padding:4px;
+      z-index:5;
+      box-shadow: 0 12px 26px rgba(0,0,0,.28);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit: cover;
+      background:#fff;
+    }
+
+    .name{
+      margin: 10px 0 0;
+      color:#fff;
+      font-size: 20px;
+      font-weight: 700;
+      text-shadow: 0 2px 12px rgba(0,0,0,.22);
+    }
+    .role{
+      margin:0;
+      color: rgba(255,255,255,.90);
+      font-size: 12px;
+      letter-spacing:.25px;
+    }
+
+    .contact-row{
+      margin-top: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap: 10px;
+      color: rgba(255,255,255,.92);
+      font-size: 12px;
+    }
+    .pill{
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 7px 10px;
+      border-radius: 999px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      backdrop-filter: blur(4px);
+    }
+    .pill svg{ width:14px; height:14px; flex:0 0 auto; opacity:.95; }
+
+    .social{
+      display:flex;
+      gap:10px;
+      margin-top: 10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .icon-btn{
+      width:34px; height:34px;
+      border-radius:50%;
+      background: rgba(255,255,255,.92);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 10px 20px rgba(0,0,0,.18);
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .icon-btn:hover{ transform: translateY(-2px) scale(1.03); filter: brightness(1.02); }
+    .icon-btn svg{ width:18px; height:18px; }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      margin-top: 12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .btn{
+      border:0;
+      cursor:pointer;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      font-size: 12px;
+      box-shadow: 0 14px 26px rgba(0,0,0,.18);
+    }
+    .btn.primary{
+      background:#fff;
+      color: var(--azul2);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.14);
+      color:#fff;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow:none;
+    }
+/* ====== SERVICES (texto izquierda + Lottie derecha) ====== */
+   .services{
+    /* fondo suave para que la “hoja” destaque */
+    background: radial-gradient(900px 420px at 50% 0%, rgba(11,95,148,.10), transparent 60%),
+                linear-gradient(180deg, #f6f8fb, #eef3f8);
+    padding: 64px 0;
+    color:#0f2233;
+  }
+
+  .services .wrap{
+    width: min(1200px, 92%);
+    margin: 0 auto;
+  }
+
+  .services h2{
+    text-align:center;
+    margin: 0 0 20px;
+    font-weight: 950;
+    letter-spacing: .2px;
+    color:#0f2233;
+    font-size: clamp(28px, 3.2vw, 46px);
+    line-height: 1.05;
+  }
+
+  /* “hoja” principal */
+  .services-paper{
+    position: relative;
+    border-radius: 26px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.92));
+    box-shadow: 0 22px 70px rgba(0,0,0,.12);
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+    padding: clamp(18px, 2.2vw, 28px);
+  }
+
+  /* borde editorial (colores tipo rueda) */
+  .services-paper::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    border-radius: 26px;
+    padding: 2px;
+    background: linear-gradient(90deg,
+      #e63b3b, #ff6a00, #f6b300, #7ad000, #20b06b, #2f8de6
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity:.55;
+  }
+
+  /* líneas sutiles tipo “libro/hoja” */
+  .services-lines{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.35;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,0) 26px,
+        rgba(11,95,148,.12) 27px,
+        rgba(0,0,0,0) 28px
+      );
+    mix-blend-mode: multiply;
+  }
+
+  /* franja superior (detalle pro) */
+  .services-band{
+    position:absolute;
+    left:0; top:0;
+    width:100%;
+    height: 74px;
+    background:
+      radial-gradient(520px 140px at 20% 50%, rgba(11,95,148,.22), transparent 60%),
+      linear-gradient(90deg, rgba(6,39,68,.92), rgba(11,95,148,.86));
+    opacity: .95;
+  }
+
+  /* contenido dentro de la hoja */
+  .services-content{
+    position: relative;
+    display:grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: clamp(18px, 2.5vw, 34px);
+    align-items: center;
+    padding-top: 34px; /* para que respire bajo la franja */
+  }
+
+  /* BLOQUE TEXTO: “editorial” */
+  .services-textbox{
+    position: relative;
+    padding: 18px 18px 18px 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.65);
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 14px 34px rgba(0,0,0,.06);
+  }
+
+  /* pequeña “marca” lateral estilo libro */
+  .services-textbox::before{
+    content:"";
+    position:absolute;
+    left: 14px;
+    top: 16px;
+    bottom: 16px;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #2f8de6, #20b06b, #f6b300, #ff6a00);
+    opacity:.55;
+  }
+
+  .services-text{
+    margin:0;
+    padding-left: 14px; /* separa de la línea */
+    text-align: left;
+    font-size: 15.7px;
+    line-height: 1.95;
+    letter-spacing: .1px;
+    color: rgba(15,34,51,.92);
+  }
+
+  /* separa párrafos para que NO sea “mazacote” */
+  .services-text p{
+    margin: 0 0 14px;
+  }
+  .services-text p:last-child{
+    margin-bottom: 0;
+  }
+
+  /* a la derecha: imagen centrada */
+  .services-illus{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .services-illus .illusShine{
+    position: relative;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height: 320px;
+  }
+
+  .services .illus-img{
+    width: min(420px, 92%);
+    height: auto;
+    display:block;
+    border-radius: 18px;
+    filter: drop-shadow(0 24px 32px rgba(0,0,0,.18));
+    opacity: 0;
+    animation: phoneEnter .75s ease-out forwards,
+               phoneFloat 4.2s ease-in-out .75s infinite;
+    will-change: transform, opacity;
+  }
+
+  /* animaciones (las tuyas) */
+  @keyframes phoneEnter{
+    from{
+      opacity:0;
+      transform: translateY(26px) rotate(-4deg) scale(.98);
+      filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+    }
+    to{
+      opacity:1;
+      transform: translateY(0) rotate(0deg) scale(1);
+      filter: drop-shadow(0 22px 34px rgba(0,0,0,.22));
+    }
+  }
+  @keyframes phoneFloat{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-10px); }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px){
+    .services-content{
+      grid-template-columns: 1fr;
+    }
+    .services-illus .illusShine{
+      min-height: 260px;
+    }
+    .services-textbox{
+      order: 1;
+    }
+    .services-illus{
+      order: 2;
+    }
+  }
+
+    /* ===== ASPECTOS (rueda + lottie) ===== */
+       /* ===================== ASPECTOS (swap izquierda/derecha al scroll) ===================== */
+/* ===================== ASPECTOS ===================== */
+.aspectos{
+  background:#fff;
+}
+
+/* Contenedor más ancho (si tienes .wrap o .container, esto ayuda) */
+.aspectos .wrap{
+  width: min(1400px, 96%);
+  margin: 0 auto;
+}
+
+/* GRID: desktop 2 columnas (rueda MÁS grande) */
+.aspectos-grid{
+  display:grid;
+  grid-template-columns: 1.35fr .65fr; /* 🔥 rueda más ancha */
+  gap: 34px;
+  align-items:center;
+  min-height: auto;
+}
+
+/* Paneles */
+.panel{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 10px 0;
+  min-height: auto;
+  transition: transform .45s ease, opacity .45s ease;
+}
+
+/* Panel rueda: permite que se vea grande */
+.panel.left{
+  overflow: visible;
+}
+
+/* Imagen del diagrama (rueda) */
+.aspectos-img{
+  width: 100%;
+  height: auto;
+  max-width: 650px;          /* 🔥 MÁS grande */
+  display:block;
+  margin: 0 auto;
+}
+
+/* Caja del lottie (persona) */
+.lottie-box{
+  width: 100%;
+  max-width: 360px;          /* 🔥 un poco más chico para dar protagonismo a la rueda */
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  filter: drop-shadow(0 18px 24px rgba(0,0,0,.10));
+}
+
+/* Asegura que el SVG interno del Lottie se ajuste */
+.lottie-box svg{
+  width: 100%;
+  height: 100%;
+  display:block;
+}
+
+/* Orden por estados */
+.aspectos[data-state="A"] .left{ order: 1; }
+.aspectos[data-state="A"] .right{ order: 2; }
+.aspectos[data-state="B"] .left{ order: 2; }
+.aspectos[data-state="B"] .right{ order: 1; }
+
+/* Animación swap */
+.aspectos.swap .panel{
+  opacity: 0;
+  transform: translateY(18px);
+}
+.aspectos.swap.done .panel{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== ANIMACIÓN ELEGANTE DIAGRAMA ===================== */
+/* OJO: aquí también la “inflamos” por si tu PNG trae aire */
+.aspectos-anim{
+  transform-origin: center center;
+  will-change: transform;
+  animation: giroElegante 9s ease-in-out infinite;
+}
+
+/* Giro orgánico + escala real */
+@keyframes giroElegante{
+  0%   { transform: rotate(0deg)  scale(1.18); } /* 🔥 más grande */
+  20%  { transform: rotate(2deg)  scale(1.20); }
+  40%  { transform: rotate(2deg)  scale(1.20); }
+  60%  { transform: rotate(-2deg) scale(1.20); }
+  80%  { transform: rotate(-2deg) scale(1.20); }
+  100% { transform: rotate(0deg)  scale(1.18); }
+}
+
+/* Respeta accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .aspectos-anim{ animation: none; transform: none; }
+}
+
+/* ===================== TABLET ===================== */
+@media (max-width: 1024px){
+  .aspectos-grid{
+    grid-template-columns: 1.2fr .8fr;
+    gap: 18px;
+  }
+  .aspectos-img{ max-width: 780px; }
+  .lottie-box{ max-width: 320px; }
+  @keyframes giroElegante{
+    0%   { transform: rotate(0deg)  scale(1.12); }
+    20%  { transform: rotate(2deg)  scale(1.14); }
+    40%  { transform: rotate(2deg)  scale(1.14); }
+    60%  { transform: rotate(-2deg) scale(1.14); }
+    80%  { transform: rotate(-2deg) scale(1.14); }
+    100% { transform: rotate(0deg)  scale(1.12); }
+  }
+}
+
+/* ===================== MÓVIL ===================== */
+@media (max-width: 860px){
+  .aspectos-grid{
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 12px;
+  }
+  .panel{ padding: 6px 0; }
+  .aspectos-img{ max-width: 92vw; }
+  .lottie-box{ max-width: 300px; }
+  @keyframes giroElegante{
+    0%   { transform: rotate(0deg)  scale(1.06); }
+    20%  { transform: rotate(2deg)  scale(1.08); }
+    40%  { transform: rotate(2deg)  scale(1.08); }
+    60%  { transform: rotate(-2deg) scale(1.08); }
+    80%  { transform: rotate(-2deg) scale(1.08); }
+    100% { transform: rotate(0deg)  scale(1.06); }
+  }
+}
+
+/* ===================== MÓVIL CHICO ===================== */
+@media (max-width: 420px){
+  .lottie-box{ max-width: 260px; }
+}
+
+/* ===================== METAS ===================== */
+.section.alt{
+  background: linear-gradient(180deg, #021b33, #052a4d);
+  border-radius: 40px;
+  margin: 40px auto;
+  padding: 60px 30px;
+  box-shadow: 0 40px 80px rgba(0,0,0,.45);
+  max-width: 1200px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+  perspective: 1200px; /* profundidad */
+}
+
+.card{
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 16px 16px 18px;
+  box-shadow: 0 18px 32px rgba(0,0,0,.16);
+  min-height: 110px;
+
+  transition: 
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
+}
+
+/* 🔥 efecto al pasar el mouse */
+.card:hover{
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 30px 60px rgba(0,0,0,.35);
+  background: rgba(255,255,255,.09);
+}
+
+/* texto */
+.card h3{
+  margin:0 0 8px;
+  font-size: 16px;
+}
+.card p{
+  margin:0;
+  font-size: 14px;
+  line-height:1.55;
+  opacity:.9;
+}
+
+/* responsive */
+@media (max-width: 860px){
+  .cards{ grid-template-columns: 1fr; }
+}
+
+    /* ===== EXPERIENCE + SKILLS ===== */
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .card{
+      background: linear-gradient(
+    135deg,
+    #0b3a5a,
+    #124e78
+  );
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      color: var(--azul2);
+      font-size: 16px;
+    }
+    .item{
+      padding: 10px 0;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+    .item:first-of-type{ border-top:0; padding-top:0; }
+    .item b{ display:block; }
+    .meta{
+      color:#6a7a88;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .item ul{
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color:#4f6070;
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip{
+      font-size: 12px;
+      font-weight: 800;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(11,95,148,.10);
+      color: var(--azul2);
+      border: 1px solid rgba(11,95,148,.18);
+    }
+    .info4{
+  background:#fff;
+}
+
+.info4-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+/* tarjeta */
+.info4-card{
+  position: relative;
+  background:#fff;
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+  overflow: hidden;
+
+  /* ✅ espacio arriba PARA QUE NUNCA SE CORTE EL TÍTULO */
+  padding: 86px 26px 22px;  /* antes 70px -> ahora 86px */
+  min-height: 340px;
+}
+
+/* franja de color */
+.info4-corner{
+  position:absolute;
+  left:0;
+  top:0;
+  width: 62%;
+  height: 86px;
+  border-radius: 22px 0 18px 0;
+  opacity: .95;
+  z-index: 1;               /* atrás del contenido */
+}
+
+/* número */
+.info4-badge{
+  position:absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 12px 24px rgba(0,0,0,.14);
+  display:grid;
+  place-items:center;
+  font-weight: 900;
+  color:#0f2233;
+  z-index: 2;
+}
+
+/* contenido por encima */
+.info4-head,
+.info4-list{
+  position: relative;
+  z-index: 3;
+}
+
+/* header: ícono + texto */
+.info4-head{
+  display:grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin-top: 6px;
+}
+
+.info4-icon{
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(0,0,0,.04);
+  display:grid;
+  place-items:center;
+  font-size: 20px;
+  color:#0f2233;
+}
+
+.info4-title{
+  margin:0;
+  font-size: 22px;
+  line-height: 1.15;
+  color:#0f2233;
+}
+
+.info4-sub{
+  margin: 6px 0 0;
+  color: #5a6a78;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.info4-list{
+  margin: 16px 0 0;
+  padding-left: 18px;
+  line-height: 1.7;
+  font-size: 15px;
+  color:#0f2233;
+}
+
+/* Colores por tarjeta */
+.info4-orange .info4-corner{ background: linear-gradient(90deg, #f6a623, #f8c34a); }
+.info4-green  .info4-corner{ background: linear-gradient(90deg, #31c26a, #55d98a); }
+.info4-blue   .info4-corner{ background: linear-gradient(90deg, #2f9ef0, #55b7ff); }
+.info4-pink   .info4-corner{ background: linear-gradient(90deg, #ff4fa0, #ff74b6); }
+
+/* hover suave (opcional) */
+.info4-card{
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.info4-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 24px 52px rgba(0,0,0,.14);
+}
+
+/* Responsive */
+@media (max-width: 860px){
+  .info4-grid{ grid-template-columns: 1fr; }
+  .info4-card{ padding: 84px 18px 18px; }
+}
+
+/* ==============================
+   CLIENTS + FOOTER (COMPACTO, SIN FRANJAS)
+   Reemplaza TODO tu bloque actual por este
+   ============================== */
+
+/* ====== CLIENTS (carrusel) ====== */
+.clients{
+  background: #fff;
+  padding: 18px 0 10px;          /* ✅ menos alto */
+  margin: 0;
+}
+
+.clients h2{
+  margin: 0 0 10px;
+  text-align: center;
+  color: #062744;                /* azul marino */
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.marquee{
+  position:relative;
+  overflow:hidden;
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 6px 0 4px;            /* ✅ más compacto */
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.track{
+  display:flex;
+  gap: 14px;                     /* ✅ un poco menos separación */
+  width:max-content;
+  animation: scroll 18s linear infinite;
+}
+@keyframes scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.logo-card{
+  width: 132px;
+  height: 42px;                  /* ✅ más “tarjetita” */
+  border-radius: 12px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  overflow:hidden;
+}
+/* ====== CLIENTS (carrusel) ====== */
+.logo-card{
+  width: 165px;        /* ⬆ un poco más */
+  height: 56px;        /* ⬆ un poco más */
+  border-radius: 16px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 12px 26px rgba(0,0,0,.07);
+  overflow:hidden;
+}
+
+.logo-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px 16px;  /* ⬆ aire interno proporcional */
+}
+
+
+/* ===== FOOTER QR / DESCARGAS ===== */
+.footer{
+  background:#fff;
+  padding: 16px 0 22px;          /* ✅ mucho más chico */
+  border-top: 1px solid rgba(0,0,0,.08);  /* ✅ separador suave (no franja) */
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;                     /* ✅ menos alto */
+  align-items:center;
+}
+
+/* LOGO + nombre */
+.brand{
+  text-align:left;               /* ✅ se ve más pro */
+}
+.brand-logo img{
+  width: 84px;                   /* ✅ logo DG más chico */
+  height: auto;
+  display:block;
+  margin-bottom: 10px;
+}
+.brand strong{
+  display:block;
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+.brand span{
+  color:#5a6a78;
+  font-size: 12px;
+}
+
+/* QR */
+.qr{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.qr img{
+  width: 120px;                  /* ✅ MÁS CHICO */
+  height: 120px;                 /* ✅ MÁS CHICO */
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 8px;
+  background:#fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+}
+
+/* Botones */
+.dl{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  align-items:flex-end;          /* ✅ quedan “a la derecha” bonito */
+}
+.btn-dl{
+  width: 240px;                  /* ✅ más chico */
+  padding: 10px 14px;            /* ✅ más compacto */
+  border-radius: 12px;
+  border:0;
+  background: var(--azul1);
+  color:#fff;
+  font-weight: 900;
+  font-size: 13px;
+  cursor:pointer;
+  box-shadow: 0 12px 22px rgba(0,0,0,.10);
+}
+
+.copyright{
+  background: linear-gradient(180deg, #000, #0b0b0b);
+  color: #fff;
+  text-align: center;
+  padding: 12px 14px 14px;
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px){
+  .footer-grid{
+    grid-template-columns: 1fr;
+    gap: 14px;
+    text-align:center;
+  }
+  .brand{ text-align:center; }
+  .brand-logo img{ margin: 0 auto 10px; }
+  .dl{ align-items:center; }
+}
+
+@media (max-width: 520px){
+  .btn-dl{ width: min(280px, 92vw); }
+  .qr img{ width: 112px; height: 112px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .track{ animation: none; }
+}
+</style>
+</head>
+
+<body>
+
+  <div class="hero-wrap">
+
+  <!-- Foto superior -->
+  <div class="top-photo" aria-hidden="true"></div>
+
+  <!-- Header base (del primero) -->
+  <header class="header">
+    <canvas class="net-canvas" id="net"></canvas>
+
+    <!-- Avatar colgado -->
+    <div class="avatar" aria-label="Foto de perfil">
+      <img src="foto.png" alt="Foto de Dinah Irasema Gómez Montoya">
+    </div>
+
+    <div class="header-inner">
+      <!-- DATOS (del segundo) -->
+      <h1 class="name" id="hName">DINAH IRASEMA GOMEZ MONTOYA</h1>
+      <p class="role" id="hRole1">Asesor Financiero y Comercial</p>
+      <p class="role" id="hRole2">Programador en React, JS, CSS, HTML</p>
+
+      <div class="contact-title">Contacto</div>
+
+      <!-- Tel + Mail (del segundo) -->
+      <div class="contact-row">
+        <div class="pill">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6.6 10.8c1.5 3.1 3.5 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2.1.5 3.2.5.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C10.6 21.2 2.8 13.4 2.8 3.2 2.8 2.5 3.3 2 4 2h3.2c.7 0 1.2.5 1.2 1.2 0 1.1.2 2.2.5 3.2.1.4 0 .9-.3 1.2l-2 2.2Z"
+              fill="white"/>
+          </svg>
+          <span id="hPhone">3343340062</span>
+        </div>
+
+        <div class="pill">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 2v.2l8 5.2 8-5.2V8H4Zm16 10V10.6l-8 5.2-8-5.2V18h16Z"
+              fill="white"/>
+          </svg>
+          <span id="hMail">dinahgomez19@gmail.com</span>
+        </div>
+      </div>
+
+      <!-- Redes (del primero, pero con los links/datos que quieras) -->
+      <div class="social" aria-label="Redes sociales">
+
+      <a class="icon-btn"
+   href="https://www.facebook.com/profile.php?id=61586180573063"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Facebook"
+   aria-label="Facebook">
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z"
+      fill="#0b5f94"/>
+  </svg>
+</a>
+<a class="icon-btn"
+   href="https://www.tiktok.com/@dynahg19"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="TikTok"
+   aria-label="TikTok">
+
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="#0b5f94"
+      d="M16.6 3c.6 2.9 2.4 4.6 5 4.8v3.2c-1.8.1-3.4-.5-5-1.5v6.4c0 4.1-3.3 7.4-7.4 7.4S2.8 20.4 2.8 16.3c0-4.1 3.3-7.4 7.4-7.4.3 0 .6 0 .9.1v3.4c-.3-.1-.6-.2-.9-.2-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4V3h2.4z" />
+  </svg>
+</a>
+
+
+ <a class="icon-btn"
+   href="https://www.linkedin.com/in/dinah-irasema-gomez-montoya-83088331b/"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="LinkedIn"
+   aria-label="LinkedIn">
+
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 9H4v11h2.5V9Zm-.2-3.2c0 .8-.6 1.4-1.4 1.4S3.5 6.6 3.5 5.8 4.1 4.4 4.9 4.4s1.4.6 1.4 1.4ZM20 20h-2.5v-5.8c0-1.4-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.3-.1.2-.1.6-.1.9V20H11.3s.1-9.7 0-11H13.8v1.6c.3-.8 1.3-1.9 3.1-1.9 2.3 0 4.1 1.5 4.1 4.7V20Z"
+          fill="#0b5f94"/>
+  </svg>
+</a>
+
+
+        <a class="icon-btn" id="waLink" href="#" title="WhatsApp" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2.5 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.6-5.3c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.2-.9.8-.9 2 0 1.2.9 2.4 1 2.5.1.2 1.8 2.8 4.4 3.9.6.3 1.1.5 1.5.6.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"
+              fill="#0b5f94"/>
+          </svg>
+        </a>
+<a class="icon-btn"
+   id="mailLink"
+   href="mailto:dinahgomez19@gmail.com"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Correo"
+   aria-label="Correo">
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 2v.2l8 5.2 8-5.2V8H4Zm16 10V10.6l-8 5.2-8-5.2V18h16Z"
+      fill="#0b5f94"/>
+  </svg>
+</a>
+
+
+      </div>
+
+     <div class="cta-row">
+  <button class="btn primary" id="btnCall">Llamar</button>
+
+  <a href="./dinah-gomez.vcf"
+     class="btn ghost"
+     download>
+     Guardar contacto (VCF)
+  </a>
+</div>
+
+    </div>
+  </header>
+</div>
+
+  <!-- ===== SOBRE MI (card) ===== -->
+ <!-- Servicios -->
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>Sobre mí</h2>
+
+    <div class="services-paper">
+
+      <div class="services-band" aria-hidden="true"></div>
+      <div class="services-lines" aria-hidden="true"></div>
+
+      <div class="services-content">
+
+        <!-- TEXTO “HOJA” -->
+        <div class="services-textbox">
+          <div class="services-text" id="servicesText">
+
+            <p>
+              Asesor financiero y comercial con más de 20 años de experiencia en el sector bancario, financiero e hipotecario,
+              enfocado en resultados, cierre de ventas y relaciones de largo plazo con clientes.
+            </p>
+
+            <p>
+              Inicié mi trayectoria en BBVA Bancomer, desempeñándome en atención a clientes, asesoría comercial, banca empresarial,
+              crédito hipotecario y análisis de riesgos, lo que me permitió desarrollar una visión integral del negocio financiero.
+            </p>
+
+            <p>
+              Posteriormente colaboré en Inbursa como asesor comercial, colocando productos financieros como tarjetas de crédito,
+              cuentas de inversión, inversiones en bolsa y créditos personales e hipotecarios.
+            </p>
+
+            <p>
+              De forma paralela, me especialicé en el sector inmobiliario, particularmente en remates bancarios, realizando análisis
+              financieros para inversionistas, evaluación de riesgos y acompañamiento durante el proceso de inversión y venta de activos.
+            </p>
+
+            <p>
+              He participado en proyectos de flipping inmobiliario y esquemas de pool inmobiliario, coordinando la adquisición,
+              recuperación, remodelación y venta de propiedades, con un enfoque transparente y estructurado.
+            </p>
+
+            <p>
+              Además, desarrollo soluciones web como una pasión personal y profesional, creando páginas web, portales y tarjetas de
+              presentación digitales mediante tecnologías como HTML, CSS, JavaScript, Node.js y React, con el objetivo de optimizar
+              procesos comerciales y mejorar la experiencia digital del cliente.
+              Me caracterizo por mi enfoque consultivo, alta empatía con el cliente, compromiso con los resultados y una fuerte pasión
+              por la innovación tecnológica y el acompañamiento cercano en cada proyecto.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- IMAGEN -->
+        <div class="services-illus">
+          <div class="illusShine">
+            <img
+              src="tarjeta dynah gomez.png"
+              alt="Tarjeta digital en teléfono"
+              class="illus-img"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ===== ASPECTOS ===== -->
+<section class="section aspectos" id="aspectos" data-state="A">
+  <div class="wrap">
+    <h2 class="title">Aspectos que me definen</h2>
+
+    
+    <div class="aspectos-grid">
+
+      <!-- LEFT: IMAGEN DEL DIAGRAMA -->
+      <div class="panel left">
+        <img
+          src="circulo.png"
+          alt="Diagrama: Aspectos que me definen"
+          class="aspectos-img aspectos-anim"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- RIGHT: PERSONA (LOTTIE) -->
+      <div class="panel right">
+        <div id="personaLottie" class="lottie-box" aria-label="Persona"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ 
+  <!-- CUMPLIMIENTO DE METAS -->
+<section class="section alt" id="metas">
+  <div class="wrap">
+    <h2 class="title">Cumplimiento de metas</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Enfoque a resultados</h3>
+        <p>
+          Trabajo con objetivos claros orientados al cierre de operaciones,
+          colocación de propiedades y generación de oportunidades reales
+          de inversión.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cierre y ejecución</h3>
+        <p>
+          Doy seguimiento puntual a cada proceso, desde la evaluación
+          hasta la negociación y cierre, asegurando avances medibles
+          y cumplimiento de metas.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Decisiones basadas en datos</h3>
+        <p>
+          Analizo precios, valor comercial, riesgo y tiempos del proceso
+          para definir estrategias claras y tomar decisiones informadas
+          que maximicen resultados.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- INFOGRAFÍA (4 BLOQUES) -->
+<section class="section info4" id="infografia">
+  <div class="wrap">
+    <h2 class="title">Infografía</h2>
+
+    <div class="info4-grid">
+
+      <!-- 1 -->
+      <article class="info4-card info4-orange">
+        <span class="info4-corner" aria-hidden="true"></span>
+        <div class="info4-badge">1</div>
+
+        <header class="info4-head">
+          <div class="info4-icon" aria-hidden="true">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <div>
+            <h3 class="info4-title">Áreas donde aporto valor</h3>
+            <p class="info4-sub">Soluciones comerciales y de inversión con enfoque a resultados.</p>
+          </div>
+        </header>
+
+        <ul class="info4-list">
+          <li>Colocación de productos financieros</li>
+          <li>Asesoría en bienes raíces</li>
+          <li>Remates bancarios y adjudicadas</li>
+          <li>Evaluación de oportunidades de inversión</li>
+          <li>Análisis de valor comercial vs. precio objetivo</li>
+          <li>Gestión de clientes y seguimiento</li>
+          <li>Negociación y cierre de operaciones</li>
+        </ul>
+      </article>
+
+      <!-- 2 -->
+      <article class="info4-card info4-green">
+        <span class="info4-corner" aria-hidden="true"></span>
+        <div class="info4-badge">2</div>
+
+        <header class="info4-head">
+          <div class="info4-icon" aria-hidden="true">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <div>
+            <h3 class="info4-title">Objetivo</h3>
+            <p class="info4-sub">Cierres seguros, procesos claros y decisiones informadas.</p>
+          </div>
+        </header>
+
+        <ul class="info4-list">
+          <li>Cumplimiento constante de metas</li>
+          <li>Negociación estratégica y cierre efectivo</li>
+          <li>Reducción de incertidumbre en la compra</li>
+          <li>Comunicación clara y trato humano</li>
+          <li>Seguimiento puntual hasta la firma / avance legal</li>
+          <li>Fidelización y relaciones de largo plazo</li>
+        </ul>
+      </article>
+
+      <!-- 3 -->
+      <article class="info4-card info4-blue">
+        <span class="info4-corner" aria-hidden="true"></span>
+        <div class="info4-badge">3</div>
+
+        <header class="info4-head">
+          <div class="info4-icon" aria-hidden="true">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <div>
+            <h3 class="info4-title">Análisis y evaluación</h3>
+            <p class="info4-sub">Números, riesgo y estrategia antes de invertir.</p>
+          </div>
+        </header>
+
+        <ul class="info4-list">
+          <li>Análisis financiero y viabilidad</li>
+          <li>Evaluación de riesgo por etapa del proceso</li>
+          <li>Comparativo contra mercado (precio / plusvalía)</li>
+          <li>Definición de estrategia (renta / reventa)</li>
+          <li>Estimación de costos y tiempos de salida</li>
+          <li>Propuesta de inversión clara y entendible</li>
+        </ul>
+      </article>
+
+      <!-- 4 -->
+      <article class="info4-card info4-pink">
+        <span class="info4-corner" aria-hidden="true"></span>
+        <div class="info4-badge">4</div>
+
+        <header class="info4-head">
+          <div class="info4-icon" aria-hidden="true">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div>
+            <h3 class="info4-title">Innovación digital</h3>
+            <p class="info4-sub">Herramientas web para vender mejor y automatizar procesos.</p>
+          </div>
+        </header>
+
+        <ul class="info4-list">
+          <li>Creación de páginas web y landing pages</li>
+          <li>Tarjetas de presentación digitales</li>
+          <li>CV digital y portafolio profesional</li>
+          <li>Webs para tiendas y catálogos (productos/servicios)</li>
+          <li>Portales web y secciones informativas</li>
+          <li>Desarrollo con HTML, CSS, JavaScript, Node</li>
+          <li>Campañas digitales y contenido visual</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== EMPRESAS ===== -->
+    <section class="clients">
+    <div class="wrap">
+      <h2>Empresa con las que trabajo</h2>
+
+      <div class="marquee" aria-label="Carrusel de clientes">
+        <div class="track" id="track">
+          <!-- Pon tus logos reales -->
+          <div class="logo-card"><img src="logoempresas (1).png"CHÚ"></div>
+          
+          <div class="logo-card"><img src="logoempresas (3).png" alt="BLUE"></div>
+          <div class="logo-card"><img src="logoempresas (4).png" alt="Tecnolandia"></div>
+          <div class="logo-card"><img src="logoempresas (5).png" alt="Kalam"></div>
+          <div class="logo-card"><img src="logoempresas (6).png" alt="Stylo Vaper"></div>
+          <div class="logo-card"><img src="logoempresas (7).png" alt="Travesías"></div>
+          <div class="logo-card"><img src="logoempresas (8).png" alt="Travesías"></div>
+          <!-- duplicado (para scroll infinito) -->
+         <div class="logo-card"><img src="logoempresas (1).png"CHÚ"></div>
+         
+          <div class="logo-card"><img src="logoempresas (3).png" alt="BLUE"></div>
+          <div class="logo-card"><img src="logoempresas (4).png" alt="Tecnolandia"></div>
+          <div class="logo-card"><img src="logoempresas (5).png" alt="Kalam"></div>
+          <div class="logo-card"><img src="logoempresas (6).png" alt="Stylo Vaper"></div>
+          <div class="logo-card"><img src="logoempresas (7).png" alt="Travesías"></div>
+          <div class="logo-card"><img src="logoempresas (8).png" alt="Travesías"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- ===== FOOTER (QR + descargas) ===== -->
+ <section class="footer" id="descargas">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <div class="brand">
+
+        <!-- LOGO -->
+        <div class="brand-logo">
+          <img src="dglogo.png" alt="Logo DG Consultoría">
+        </div>
+
+        <!-- NOMBRE -->
+        <strong id="fName">DINAH IRASEMA GÓMEZ MONTOYA</strong>
+        <span id="fRole">Asesor Financiero y Comercial • Frontend</span>
+      </div>
+
+      <!-- QR -->
+      <div class="qr">
+  <img
+    id="qrMain"
+    src="./qrtelefono.jpg"
+    alt="Código QR de contacto">
+</div>
+
+
+      <!-- DESCARGAS -->
+    <div class="dl">
+  <a class="btn-dl" href="DINAH IRASEMA GOMEZ MONTOYA (5).pdf" target="_blank" download>
+    Descargar CV Español
+  </a>
+
+  <a class="btn-dl" href="DINAH IRASEMA GOMEZ MONTOYA (6).pdf" target="_blank" download>
+    Download CV English
+  </a>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+  <div class="copyright">
+    Tarjeta de presentación • 2026
+  </div>
+
+  <script>
+    /* =========================
+       1) DATOS (TU CV)
+       ========================= */
+    const DATA = {
+      fullName: "DINAH IRASEMA GOMEZ MONTOYA",
+      role: "Asesor Financiero y Comercial • Programador en React, JS, CSS, HTML",
+      phone: "3343340062",
+      email: "dinahgomez19@gmail.com",
+      address: "Calle Matanzas 89/6, Lindavista Norte, G.A.M., C.P. 04300, CDMX",
+      website: "https://tusitio.com", // EDITA: URL donde publicarás la tarjeta
+      whatsappMessage: "Hola, me gustaría más información."
+    };
+
+    // pintar header/footer
+    // pintar header/footer (SIN ERRORES)
+document.getElementById("hName").textContent = DATA.fullName;
+
+document.getElementById("hRole1").textContent = "Asesor Financiero y Comercial";
+document.getElementById("hRole2").textContent = "Programador en React, JS, CSS, HTML";
+
+document.getElementById("hPhone").textContent = DATA.phone;
+document.getElementById("hMail").textContent = DATA.email;
+
+document.getElementById("fName").textContent = DATA.fullName;
+document.getElementById("fRole").textContent = "Asesor Financiero y Comercial • Frontend";
+
+document.getElementById("qrMain").src =
+  `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(DATA.website)}`;
+
+    // links rápidos
+    const wa = document.getElementById("waLink");
+    const mail = document.getElementById("mailLink");
+    wa.href = `https://wa.me/52${DATA.phone.replace(/[^\d]/g,'')}?text=${encodeURIComponent(DATA.whatsappMessage)}`;
+    mail.href = `mailto:${DATA.email}`;
+
+    document.getElementById("btnCall").addEventListener("click", ()=>{
+      window.location.href = `tel:+52${DATA.phone.replace(/[^\d]/g,'')}`;
+    });
+
+    /* =============================
+       CONECTORES (canvas) - FUERTES
+       ============================= */
+    (function(){
+      const canvas = document.getElementById('net');
+      const ctx = canvas.getContext('2d', { alpha:true });
+
+      let w=0,h=0,dpr=1;
+      let pts=[];
+const cfg = {
+  density: 14000,   // más alto = menos puntos (menos “nido”)
+  minPts: 42,
+  maxPts: 70,
+
+  linkDist: 220,    // distancia para que sí haya líneas
+  maxLinks: 3,      // ✅ CLAVE: máximo de conexiones por punto
+
+  drift: 0.08,
+  lineW: 1.0,
+  dotR: 1.4,
+  baseAlpha: 0.22   // ✅ tenue (antes 0.58 era telaraña)
+  
+};
+
+
+      function resize(){
+        const r = canvas.getBoundingClientRect();
+        dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+        w = Math.floor(r.width);
+        h = Math.floor(r.height);
+        canvas.width = Math.floor(w*dpr);
+        canvas.height = Math.floor(h*dpr);
+        canvas.style.width = w+'px';
+        canvas.style.height = h+'px';
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+
+        const target = Math.max(cfg.minPts, Math.min(cfg.maxPts, Math.round((w*h)/cfg.density)));
+        pts = new Array(target).fill(0).map(()=>({
+          x: Math.random()*w,
+          y: Math.random()*h,
+          vx:(Math.random()*2-1)*cfg.drift,
+          vy:(Math.random()*2-1)*cfg.drift
+        }));
+      }
+
+      function draw(){
+        ctx.clearRect(0,0,w,h);
+        ctx.lineWidth = cfg.lineW;
+        ctx.fillStyle = "rgba(255,255,255,0.90)";
+
+        for(const p of pts){
+          p.x += p.vx;
+          p.y += p.vy;
+          if(p.x<0||p.x>w) p.vx *= -1;
+          if(p.y<0||p.y>h) p.vy *= -1;
+        }
+
+        for(let i=0;i<pts.length;i++){
+          const a=pts[i];
+          ctx.beginPath();
+          ctx.arc(a.x,a.y,cfg.dotR,0,Math.PI*2);
+          ctx.fill();
+
+          for(let j=i+1;j<pts.length;j++){
+            const b=pts[j];
+            const dx=a.x-b.x, dy=a.y-b.y;
+            const dist = Math.hypot(dx,dy);
+           if (dist < cfg.linkDist) {
+  // recorta líneas para que NO se vea telaraña
+  if (Math.random() > cfg.linkChance) continue;
+
+  const alpha = (1 - dist / cfg.linkDist) * cfg.baseAlpha;
+
+  ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+  ctx.beginPath();
+  ctx.moveTo(a.x, a.y);
+  ctx.lineTo(b.x, b.y);
+  ctx.stroke();
+}
+
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', resize, { passive:true });
+      resize();
+      draw();
+    })();
+
+    /* =========================
+       3) RUEDA (SVG)
+       - 6 segmentos, editable
+       ========================= */
+    let ASPECTOS = [
+      "Alta capacidad\npara liderar\ny administrar",
+      "Sólida capacidad\nde Análisis",
+      "Enfocado a\nMultitareas &\nMultiprocesos",
+      "Competitivo",
+      "Especializado\nen Inversiones\nAlternativas",
+      "Liderazgo y\nGestión de equipos\npara soluciones"
+    ];
+
+    const COLORS = ["#e63b3b","#ff6a00","#f6b300","#7ad000","#20b06b","#2f8de6"];
+
+    function polarToXY(r, ang){
+      const a = (ang-90) * Math.PI/180;
+      return { x: r*Math.cos(a), y: r*Math.sin(a) };
+    }
+    function arcPath(r1, r2, a0, a1){
+      const p0 = polarToXY(r2, a0);
+      const p1 = polarToXY(r2, a1);
+      const p2 = polarToXY(r1, a1);
+      const p3 = polarToXY(r1, a0);
+      const large = (a1-a0) > 180 ? 1 : 0;
+      return [
+        `M ${p0.x} ${p0.y}`,
+        `A ${r2} ${r2} 0 ${large} 1 ${p1.x} ${p1.y}`,
+        `L ${p2.x} ${p2.y}`,
+        `A ${r1} ${r1} 0 ${large} 0 ${p3.x} ${p3.y}`,
+        "Z"
+      ].join(" ");
+    }
+
+    function renderWheel(){
+      const g = document.getElementById("segments");
+      g.innerHTML = "";
+
+      const rIn = 130, rOut = 210;
+      const step = 360 / ASPECTOS.length;
+
+      ASPECTOS.forEach((txt, i)=>{
+        const a0 = i*step + 6;       // separador
+        const a1 = (i+1)*step - 6;
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg","path");
+        path.setAttribute("d", arcPath(rIn, rOut, a0, a1));
+        path.setAttribute("fill", COLORS[i % COLORS.length]);
+        g.appendChild(path);
+
+        // texto
+        const mid = (a0+a1)/2;
+        const tpos = polarToXY(168, mid);
+
+        const textEl = document.createElementNS("http://www.w3.org/2000/svg","text");
+        textEl.setAttribute("x", tpos.x);
+        textEl.setAttribute("y", tpos.y);
+        textEl.setAttribute("text-anchor","middle");
+        textEl.setAttribute("dominant-baseline","middle");
+        textEl.setAttribute("font-size", "18");
+        textEl.setAttribute("font-weight", "800");
+        textEl.setAttribute("fill", "#ffffff");
+
+        // líneas
+        const lines = txt.split("\n");
+        lines.forEach((line, idx)=>{
+          const tspan = document.createElementNS("http://www.w3.org/2000/svg","tspan");
+          tspan.setAttribute("x", tpos.x);
+          tspan.setAttribute("dy", idx===0 ? 0 : 22);
+          tspan.textContent = line;
+          textEl.appendChild(tspan);
+        });
+
+        g.appendChild(textEl);
+      });
+    }
+    renderWheel();
+
+    // editar textos
+    document.getElementById("btnEditar").addEventListener("click", ()=>{
+      const joined = ASPECTOS.map((a,i)=>`${i+1}) ${a.replaceAll("\n"," / ")}`).join("\n");
+      const raw = prompt("Edita los 6 aspectos (1 por línea):\n(Usa ' / ' para saltos dentro del segmento)\n\n", joined);
+      if(!raw) return;
+      const lines = raw.split("\n")
+        .map(s=>s.trim())
+        .filter(Boolean)
+        .slice(0,6);
+
+      if(lines.length){
+        ASPECTOS = lines.map(s => s.replace(/^(\d\)\s*)/,"").replaceAll(" / ","\n"));
+        renderWheel();
+      }
+    });
+
+    // exportar SVG a PNG (descarga)
+    document.getElementById("btnPng").addEventListener("click", async ()=>{
+      const svg = document.getElementById("wheelSvg");
+      const canvas = document.getElementById("wheelCanvas");
+      const ctx = canvas.getContext("2d");
+
+      const xml = new XMLSerializer().serializeToString(svg);
+      const svg64 = btoa(unescape(encodeURIComponent(xml)));
+      const image64 = "data:image/svg+xml;base64," + svg64;
+
+      const img = new Image();
+      img.onload = ()=>{
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        const a = document.createElement("a");
+        a.href = canvas.toDataURL("image/png");
+        a.download = "aspectos-que-me-definen.png";
+        a.click();
+      };
+      img.src = image64;
+    });
+
+    /* =========================
+       4) VCARD
+       ========================= */
+    function makeVCard(d){
+      return [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        `FN:${d.fullName}`,
+        `TITLE:${d.role}`,
+        `TEL;TYPE=CELL:+52${d.phone}`,
+        `EMAIL;TYPE=INTERNET:${d.email}`,
+        `ADR;TYPE=WORK:;;;${d.address};;;;`,
+        `URL:${d.website}`,
+        "END:VCARD"
+      ].join("\n");
+    }
+
+    document.getElementById("btnVcf").addEventListener("click", ()=>{
+      const vcf = makeVCard(DATA);
+      const blob = new Blob([vcf], {type:"text/vcard;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${DATA.fullName.replace(/\s+/g,"_")}.vcf`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+
+  </script>
+  <script>
+  function loadLottie(id, path){
+    const el = document.getElementById(id);
+    if(!el) return null;
+    return lottie.loadAnimation({
+      container: el,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: path
+    });
+  }
+
+  // ✅ SOLO ESTO porque es lo único que existe en tu HTML actual
+  loadLottie("personaLottie", "./sobremi.json"); // <-- pon aquí el JSON real que tienes
+</script>
+</body>
+</html>
