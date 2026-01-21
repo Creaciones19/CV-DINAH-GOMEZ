@@ -1121,7 +1121,8 @@
 </a>
 
 
-        <a class="icon-btn" id="waLink" href="#" title="WhatsApp" aria-label="WhatsApp">
+       <a class="icon-btn" id="waLink" href="javascript:void(0)" title="WhatsApp" aria-label="WhatsApp">
+
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M12 2a10 10 0 0 0-8.6 15.1L2.5 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.6-5.3c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.2-.9.8-.9 2 0 1.2.9 2.4 1 2.5.1.2 1.8 2.8 4.4 3.9.6.3 1.1.5 1.5.6.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"
               fill="#0b5f94"/>
@@ -1542,26 +1543,57 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!hName) return;
 
   hName.textContent = DATA.fullName;
-  document.getElementById("hRole1").textContent = "Asesor Financiero y Comercial";
-  document.getElementById("hRole2").textContent = "Programador en React, JS, CSS, HTML";
-  document.getElementById("hPhone").textContent = DATA.phone;
-  document.getElementById("hMail").textContent = DATA.email;
 
-  document.getElementById("fName").textContent = DATA.fullName;
-  document.getElementById("fRole").textContent = "Asesor Financiero y Comercial • Frontend";
+  const hRole1 = document.getElementById("hRole1");
+  if (hRole1) hRole1.textContent = "Asesor Financiero y Comercial";
 
-  document.getElementById("qrMain").src =
-    `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(DATA.website)}`;
+  const hRole2 = document.getElementById("hRole2");
+  if (hRole2) hRole2.textContent = "Programador en React, JS, CSS, HTML";
 
+  const hPhone = document.getElementById("hPhone");
+  if (hPhone) hPhone.textContent = DATA.phone;
+
+  const hMail = document.getElementById("hMail");
+  if (hMail) hMail.textContent = DATA.email;
+
+  const fName = document.getElementById("fName");
+  if (fName) fName.textContent = DATA.fullName;
+
+  const fRole = document.getElementById("fRole");
+  if (fRole) fRole.textContent = "Asesor Financiero y Comercial • Frontend";
+
+  // ✅ NO TRUENA si no existe
+  const qrMain = document.getElementById("qrMain");
+  if (qrMain) {
+    qrMain.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(DATA.website)}`;
+  }
+
+  // ✅ WhatsApp
+  const WA_URL = "https://wa.me/523343340062?text=Hola%20quiero%20más%20información%20sobre%20remates%20bancarios";
   const wa = document.getElementById("waLink");
+  if (wa) {
+    wa.href = WA_URL;
+    wa.target = "_blank";
+    wa.rel = "noopener noreferrer";
+    wa.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(WA_URL, "_blank", "noopener,noreferrer");
+    });
+  }
+
+  // ✅ Mail
   const mail = document.getElementById("mailLink");
+  if (mail) {
+    mail.href = `mailto:${DATA.email}`;
+  }
 
-  wa.href = `https://wa.me/52${DATA.phone.replace(/[^\d]/g,'')}?text=${encodeURIComponent(DATA.whatsappMessage)}`;
-  mail.href = `mailto:${DATA.email}`;
-
-  document.getElementById("btnCall").addEventListener("click", () => {
-    window.location.href = `tel:+52${DATA.phone.replace(/[^\d]/g,'')}`;
-  });
+  // ✅ No truena si no existe
+  const btnCall = document.getElementById("btnCall");
+  if (btnCall) {
+    btnCall.addEventListener("click", () => {
+      window.location.href = `tel:+52${DATA.phone.replace(/[^\d]/g,'')}`;
+    });
+  }
 });
 
 /* =============================
