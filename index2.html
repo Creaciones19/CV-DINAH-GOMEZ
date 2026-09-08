@@ -4,9 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CV | Portafolio Profesional - Dinah Irasema Gómez Montoya</title>
-  <!-- Favicon DG: grande y animado -->
-  <link rel="icon" id="dynamicFavicon" type="image/png" href="dgsinfondo.png">
-  <link rel="apple-touch-icon" href="dgsinfondo.png">
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -3374,120 +3371,6 @@ header.header.hero-pro{width:100%;max-width:none;margin:0;border-radius:0;min-he
 }
 
 </style>
-
-  <script>
-  (() => {
-    const ICON_SRC = "dgsinfondo.png";
-    const SIZE = 64;
-    const SPIN_EVERY = 3000;
-    const SPIN_DURATION = 900;
-
-    const icon = document.getElementById("dynamicFavicon");
-    if (!icon) return;
-
-    const source = new Image();
-    source.decoding = "async";
-    source.src = ICON_SRC;
-
-    source.onload = () => {
-      try {
-        const probe = document.createElement("canvas");
-        probe.width = source.naturalWidth;
-        probe.height = source.naturalHeight;
-        const pctx = probe.getContext("2d", { willReadFrequently: true });
-        pctx.drawImage(source, 0, 0);
-
-        let sx = 0, sy = 0, sw = source.naturalWidth, sh = source.naturalHeight;
-
-        try {
-          const pixels = pctx.getImageData(0, 0, probe.width, probe.height).data;
-          let minX = probe.width, minY = probe.height, maxX = -1, maxY = -1;
-
-          for (let y = 0; y < probe.height; y++) {
-            for (let x = 0; x < probe.width; x++) {
-              if (pixels[(y * probe.width + x) * 4 + 3] > 8) {
-                if (x < minX) minX = x;
-                if (x > maxX) maxX = x;
-                if (y < minY) minY = y;
-                if (y > maxY) maxY = y;
-              }
-            }
-          }
-
-          if (maxX >= minX && maxY >= minY) {
-            sx = minX;
-            sy = minY;
-            sw = maxX - minX + 1;
-            sh = maxY - minY + 1;
-          }
-        } catch (_) {}
-
-        const canvas = document.createElement("canvas");
-        canvas.width = SIZE;
-        canvas.height = SIZE;
-        const ctx = canvas.getContext("2d");
-
-        const drawFrame = (angle = 0) => {
-          ctx.clearRect(0, 0, SIZE, SIZE);
-          ctx.save();
-          ctx.translate(SIZE / 2, SIZE / 2);
-          ctx.rotate(angle);
-
-          const maxSide = SIZE - 2;
-          const scale = Math.min(maxSide / sw, maxSide / sh);
-          const dw = sw * scale;
-          const dh = sh * scale;
-
-          ctx.drawImage(source, sx, sy, sw, sh, -dw / 2, -dh / 2, dw, dh);
-          ctx.restore();
-
-          try {
-            icon.href = canvas.toDataURL("image/png");
-          } catch (_) {
-            icon.href = ICON_SRC;
-          }
-        };
-
-        drawFrame(0);
-
-        let spinning = false;
-
-        const spinOnce = () => {
-          if (spinning || document.hidden) return;
-          spinning = true;
-          const start = performance.now();
-
-          const frame = (now) => {
-            const t = Math.min(1, (now - start) / SPIN_DURATION);
-            const eased = t < 0.5
-              ? 2 * t * t
-              : 1 - Math.pow(-2 * t + 2, 2) / 2;
-
-            drawFrame(eased * Math.PI * 2);
-
-            if (t < 1) {
-              requestAnimationFrame(frame);
-            } else {
-              drawFrame(0);
-              spinning = false;
-            }
-          };
-
-          requestAnimationFrame(frame);
-        };
-
-        setInterval(spinOnce, SPIN_EVERY);
-      } catch (_) {
-        icon.href = ICON_SRC;
-      }
-    };
-
-    source.onerror = () => {
-      icon.href = ICON_SRC;
-    };
-  })();
-  </script>
-
 </head>
 
 <body>
